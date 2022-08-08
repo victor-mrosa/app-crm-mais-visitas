@@ -1,0 +1,161 @@
+"'Screen Selected Interview' As screen":
+    BackgroundImage: =
+    Fill: =RGBA(241, 244, 249, 1)
+    ImagePosition: =ImagePosition.Fill
+    OnVisible: =Refresh('Tb - Informacoes Visita')
+
+    ctnSelectedInterview As groupContainer.manualLayoutContainer:
+        Height: =685
+        Width: =1366
+        Y: =83
+        ZIndex: =3
+
+        "glrSiVisitas As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =550
+            Items: |-
+                =SortByColumns(
+                    Filter('Tb - Informacoes Visita','Responsavel Visita' = cmbSiResponsavelVisita.Selected.Result),"Created",Descending)
+            Layout: =Layout.Vertical
+            ShowNavigation: =true
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =170
+            Transition: =Transition.Pop
+            Width: =1219
+            X: =105
+            Y: =111
+            ZIndex: =1
+
+            lblSiCliente As label:
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Bold
+                Height: =53
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =20
+                Text: =Coalesce(LookUp('Tb - Clientes','Codigo Empresa' = Text(ThisItem.'Codigo Empresa')).'Razao Social',ThisItem.Cliente)
+                Width: =990
+                X: =48
+                Y: =38
+                ZIndex: =2
+
+            lblSiAgente As label:
+                Font: =Font.'Lato Light'
+                FontWeight: =FontWeight.Semibold
+                Height: =51
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =15
+                Text: |-
+                    =Concatenate("Responsável: ",ThisItem.'Responsavel Visita') & " 
+                    " & Concatenate("Criado: ",ThisItem.Criado)
+                VerticalAlign: =VerticalAlign.Top
+                Width: =990
+                X: =48
+                Y: =101
+                ZIndex: =3
+
+            icoSiSelected As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =65
+                Icon: =Icon.ArrowRight
+                OnSelect: |-
+                    =Navigate('Screen Details Interview',ScreenTransition.CoverRight,{locVisita: glrSiVisitas.Selected})
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                TabIndex: =0
+                Tooltip: ="Exibir detalhes do item"
+                Width: =66
+                X: =1107
+                Y: =36
+                ZIndex: =4
+
+            sprtSiEspacador As rectangle:
+                Fill: =RGBA(237, 237, 237, 1)
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =1183
+                X: =18
+                Y: =169
+                ZIndex: =5
+
+            Label4 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(24, 56, 132, 1)
+                Font: =Font.'Lato Black'
+                Height: =36
+                OnSelect: =Select(Parent)
+                Text: ="ID" & ThisItem.'Codigo Empresa'
+                Width: =122
+                ZIndex: =6
+
+        Container1 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =82
+            Width: =1207
+            X: =105
+            Y: =11
+            ZIndex: =3
+
+            cmbSiResponsavelVisita As combobox:
+                BorderThickness: =1
+                DefaultSelectedItems: =First(Upper(Distinct('Tb - Informacoes Visita',Upper('Responsavel Visita')).Result))
+                DisplayFields: =["Result"]
+                Font: =Font.Lato
+                InputTextPlaceholder: ="Localizar Agentes"
+                Items: =Upper(Distinct('Tb - Informacoes Visita',Upper('Responsavel Visita')).Result)
+                SearchFields: =["Result"]
+                SearchItems: =Search(Upper(Distinct('Tb - Informacoes Visita',Upper('Responsavel Visita')).Result),cmbSiResponsavelVisita.SearchText,"Result")
+                SelectMultiple: =false
+                Size: =12
+                X: =35
+                Y: =20
+                ZIndex: =1
+
+    ctnSelectedInterviewHeader As groupContainer.manualLayoutContainer:
+        Height: =83
+        Width: =1366
+        ZIndex: =4
+
+        rectSiHeader As rectangle:
+            Fill: =RGBA(24, 56, 132, 1)
+            Height: =2
+            Width: =1232
+            X: =108
+            Y: =72
+            ZIndex: =1
+
+        lblSiDetalhesVisita As label:
+            Color: =RGBA(24, 56, 132, 1)
+            Fill: =RGBA(24, 56, 132, 0)
+            Font: =Font.'Lato Black'
+            FontWeight: =FontWeight.Semibold
+            Height: =52
+            PaddingLeft: =0
+            Size: =25
+            Text: ="SELECIONAR VISITA"
+            Width: =1232
+            X: =108
+            Y: =20
+            ZIndex: =2
+
+        icoSiVoltar As icon.ArrowLeft:
+            Color: =RGBA(24, 56, 132, 1)
+            Icon: =Icon.ArrowLeft
+            OnSelect: =Navigate('Screen Page Home',ScreenTransition.UnCoverRight)
+            X: =20
+            Y: =19
+            ZIndex: =3
+

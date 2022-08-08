@@ -1,0 +1,1027 @@
+"'Screen Details Interview' As screen":
+    BackgroundImage: =
+    Fill: =RGBA(241, 244, 249, 1)
+    ImagePosition: =ImagePosition.Fill
+    LoadingSpinner: =LoadingSpinner.Data
+
+    ctnDetailsForm As groupContainer.manualLayoutContainer:
+        Height: =685
+        Width: =1366
+        Y: =83
+        ZIndex: =1
+
+        grpDfDadosRoteiro As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =3
+
+            formDfDadosRoteiro As formViewer:
+                AcceptsFocus: =false
+                DataSource: ='Tb - Informacoes Visita'
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =232
+                Item: =locVisita
+                NumberOfColumns: =1
+                Width: =354
+                X: =108
+                Y: =36
+                ZIndex: =1
+
+                "'Nome Rota_DataCard1' As typedDataCard.textualViewCard":
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="NomeRota"
+                    Default: =ThisItem.'Nome Rota'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@'Tb - Informacoes Visita'],DataSourceInfo.DisplayName,"NomeRota")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =354
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                    DataCardKey12 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue12 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =50
+                        Y: =DataCardKey12.Y + DataCardKey12.Height + 5
+                        ZIndex: =2
+
+                "'Responsavel Visita_DataCard2' As typedDataCard.textualViewCard":
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="ResponsavelVisita"
+                    Default: =ThisItem.'Responsavel Visita'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Responsavel Visita"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =true
+                    Width: =354
+                    X: =0
+                    Y: =1
+                    ZIndex: =1
+
+                    DataCardKey80 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue80 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =DataCardKey80.Y + DataCardKey80.Height + 5
+                        ZIndex: =2
+
+                Criado_DataCard1 As typedDataCard.textualViewCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="Created"
+                    Default: =ThisItem.Criado
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Criado"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =354
+                    X: =0
+                    Y: =2
+                    ZIndex: =1
+
+                    DataCardKey81 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue81 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =DataCardKey81.Y + DataCardKey81.Height + 5
+                        ZIndex: =2
+
+            lblDfDadosRoteiro As label:
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Bold
+                Height: =36
+                Size: =15
+                Text: ="Dados Roteiro"
+                Width: =357
+                X: =108
+                ZIndex: =2
+
+        grpDfDadosCliente As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =5
+
+            frmDfDadosCliente As formViewer:
+                AcceptsFocus: =false
+                DataSource: ='Tb - Informacoes Visita'
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =333
+                Item: =locVisita
+                NumberOfColumns: =1
+                Width: =357
+                X: =108
+                Y: =321
+                ZIndex: =3
+
+                Cliente_DataCard5 As typedDataCard.textualViewCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="Cliente"
+                    Default: =ThisItem.Cliente
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Cliente"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =72
+                    Required: =false
+                    Width: =357
+                    X: =0
+                    Y: =1
+                    ZIndex: =1
+
+                    DataCardKey106 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue106 As label:
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =42
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Coalesce(LookUp('Tb - Clientes','Codigo Empresa' = Text(ThisItem.'Codigo Empresa')).'Razao Social',ThisItem.Cliente)
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =44
+                        ZIndex: =2
+
+                CNPJ_DataCard6 As typedDataCard.textualViewCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="CNPJ"
+                    Default: =ThisItem.CNPJ
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="CNPJ"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =357
+                    X: =0
+                    Y: =2
+                    ZIndex: =1
+
+                    DataCardKey105 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue105 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Coalesce(LookUp('Tb - Clientes','Codigo Empresa' = Text(ThisItem.'Codigo Empresa')).CNPJ,ThisItem.CNPJ)
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =DataCardKey105.Y + DataCardKey105.Height + 5
+                        ZIndex: =2
+
+                Telefone_DataCard4 As typedDataCard.textualViewCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="Telefone"
+                    Default: =ThisItem.Telefone
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Telefone"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =357
+                    X: =0
+                    Y: =3
+                    ZIndex: =1
+
+                    DataCardKey107 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue107 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Coalesce(LookUp('Tb - Clientes','Codigo Empresa' = Text(ThisItem.'Codigo Empresa')).Telefone, ThisItem.Telefone)
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =DataCardKey107.Y + DataCardKey107.Height + 5
+                        ZIndex: =2
+
+                "'Codigo Empresa_DataCard2' As typedDataCard.textualViewCard":
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="CodigoEmpresa"
+                    Default: =ThisItem.'Codigo Empresa'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Codigo Empresa"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =true
+                    Width: =357
+                    X: =0
+                    Y: =0
+                    ZIndex: =4
+
+                    DataCardKey83 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue83 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =DataCardKey83.Y + DataCardKey83.Height + 5
+                        ZIndex: =2
+
+            lblDfDadosCliente As label:
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Bold
+                Size: =15
+                Text: ="Dados Cliente"
+                Width: =357
+                X: =108
+                Y: =281
+                ZIndex: =4
+
+        grpDfCaracteristicasCliente As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =7
+
+            frmDfCaracteristicasCliente As formViewer:
+                AcceptsFocus: =false
+                BorderColor: =RGBA(24, 56, 132, 1)
+                DataSource: ='Tb - Informacoes Visita'
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =618
+                Item: =locVisita
+                NumberOfColumns: =2
+                Width: =802
+                X: =498
+                Y: =36
+                ZIndex: =5
+
+                "'Ramo de Atividade_DataCard5' As typedDataCard.textualViewCard":
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="RamodeAtividade"
+                    Default: =ThisItem.'Ramo de Atividade'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Ramo de Atividade"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =401
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                    DataCardKey131 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue131 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =DataCardKey131.Y + DataCardKey131.Height + 5
+                        ZIndex: =2
+
+                Perfil_DataCard9 As typedDataCard.textualViewCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="Perfil"
+                    Default: =ThisItem.Perfil
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Perfil"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =401
+                    X: =1
+                    Y: =0
+                    ZIndex: =1
+
+                    DataCardKey130 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue130 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =DataCardKey130.Y + DataCardKey130.Height + 5
+                        ZIndex: =2
+
+                "'Espaco Fisico_DataCard4' As typedDataCard.textualViewCard":
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="EspacoFisico"
+                    Default: =ThisItem.'Espaco Fisico'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Espaco Fisico"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =401
+                    X: =0
+                    Y: =1
+                    ZIndex: =1
+
+                    DataCardKey132 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue132 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =DataCardKey132.Y + DataCardKey132.Height + 5
+                        ZIndex: =2
+
+                "'Possui Estoque?_DataCard4' As typedDataCard.textualViewCard":
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="PossuiEstoque"
+                    Default: =ThisItem.'Possui Estoque?'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Possui Estoque?"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =401
+                    X: =1
+                    Y: =1
+                    ZIndex: =1
+
+                    DataCardKey133 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue133 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =DataCardKey133.Y + DataCardKey133.Height + 5
+                        ZIndex: =2
+
+                Produto_DataCard6 As typedDataCard.textualViewCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="Produto"
+                    Default: =ThisItem.Produto
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Produto"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =401
+                    X: =0
+                    Y: =2
+                    ZIndex: =1
+
+                    DataCardKey134 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue134 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =DataCardKey134.Y + DataCardKey134.Height + 5
+                        ZIndex: =2
+
+                "'Outros (Ramo de Atividade)_DataCard1' As typedDataCard.textualViewCard":
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="Outros_x0028_RamodeAtividade_x00"
+                    Default: =ThisItem.'Outros (Produtos)'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@'Tb - Informacoes Visita'],DataSourceInfo.DisplayName,"Outros_x0028_RamodeAtividade_x00")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =401
+                    X: =1
+                    Y: =2
+                    ZIndex: =1
+
+                    DataCardKey7 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue7 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =56
+                        Y: =DataCardKey7.Y + DataCardKey7.Height + 5
+                        ZIndex: =2
+
+                "'Qual Produto de Maior Potencial ou Giro?_DataCard4' As typedDataCard.textualViewCard":
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="QualProdutodeMaiorPotencialouGir"
+                    Default: =ThisItem.'Qual Produto de Maior Potencial ou Giro?'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Qual Produto de Maior Potencial ou Giro?"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =401
+                    X: =0
+                    Y: =3
+                    ZIndex: =1
+
+                    DataCardKey136 As label:
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =35
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue136 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =57
+                        ZIndex: =2
+
+                "'Outros (Potencial de Giro)_DataCard1' As typedDataCard.textualViewCard":
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="Outros"
+                    Default: =ThisItem.'Outros (Potencial de Giro)'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: =DataSourceInfo([@'Tb - Informacoes Visita'],DataSourceInfo.DisplayName,"Outros")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =401
+                    X: =1
+                    Y: =3
+                    ZIndex: =1
+
+                    DataCardKey5 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue5 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =56
+                        Y: =DataCardKey5.Y + DataCardKey5.Height + 5
+                        ZIndex: =2
+
+                "'Qual Volume de Venda Casada?_DataCard4' As typedDataCard.textualViewCard":
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="QualVolumedeVendaCasada_x003f_"
+                    Default: =ThisItem.'Qual Volume de Venda Casada?'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Qual Volume de Venda Casada?"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =401
+                    X: =0
+                    Y: =4
+                    ZIndex: =1
+
+                    DataCardKey135 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue135 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =DataCardKey135.Y + DataCardKey135.Height + 5
+                        ZIndex: =2
+
+                "'Qual Potencial de Compras com Autoglass?_DataCard4' As typedDataCard.textualViewCard":
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="QualPotencialdeComprascomAutogla"
+                    Default: =ThisItem.'Qual Potencial de Compras com Autoglass?'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Qual Potencial de Compras com Autoglass?"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =401
+                    X: =1
+                    Y: =4
+                    ZIndex: =1
+
+                    DataCardKey139 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =2
+                        ZIndex: =1
+
+                    DataCardValue139 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =DataCardKey139.Y + DataCardKey139.Height + 5
+                        ZIndex: =2
+
+                "'Possui Mao de Obra?_DataCard4' As typedDataCard.textualViewCard":
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="PossuiMaodeObra_x003f_"
+                    Default: =ThisItem.'Possui Mao de Obra?'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Possui Mao de Obra?"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =401
+                    X: =0
+                    Y: =5
+                    ZIndex: =1
+
+                    DataCardKey137 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue137 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =DataCardKey137.Y + DataCardKey137.Height + 5
+                        ZIndex: =2
+
+                "'Atende Seguradoras?_DataCard4' As typedDataCard.textualViewCard":
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="AtendeSeguradoras_x003f_"
+                    Default: =ThisItem.'Atende Seguradoras?'
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Atende Seguradoras?"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =40
+                    Required: =false
+                    Width: =401
+                    X: =1
+                    Y: =5
+                    ZIndex: =1
+
+                    DataCardKey138 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue138 As label:
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        Width: =Parent.Width - 60
+                        X: =46
+                        Y: =DataCardKey138.Y + DataCardKey138.Height + 5
+                        ZIndex: =2
+
+                Descrição_DataCard4 As typedDataCard.textualViewCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="Descri_x00e7__x00e3_o"
+                    Default: =ThisItem.Descrição
+                    DisplayMode: =DisplayMode.View
+                    DisplayName: ="Descrição"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =148
+                    Required: =false
+                    Width: =401
+                    WidthFit: =true
+                    X: =0
+                    Y: =6
+                    ZIndex: =1
+
+                    DataCardKey140 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue140 As label:
+                        Align: =Align.Justify
+                        AutoHeight: =true
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.Verdana
+                        Height: =94
+                        PaddingLeft: =0
+                        PaddingRight: =20
+                        PaddingTop: =0
+                        Size: =11
+                        Text: =Parent.Default
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =741
+                        X: =46
+                        Y: =DataCardKey140.Y + DataCardKey140.Height + 5
+                        ZIndex: =2
+
+                Anexos_DataCard2 As typedDataCard.attachmentsViewCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="{Attachments}"
+                    Default: =ThisItem.Anexos
+                    DisplayMode: =DisplayMode.Edit
+                    DisplayName: ="Anexos"
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =289
+                    Required: =false
+                    Update: =
+                    Width: =401
+                    X: =0
+                    Y: =7
+                    ZIndex: =1
+
+                    "glrAnexos As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver4.0'":
+                        Height: =223
+                        Items: =ThisItem.Anexos.Value
+                        OnSelect: =
+                        ShowNavigation: =true
+                        ShowScrollbar: =false
+                        TemplatePadding: =0
+                        TemplateSize: =247
+                        Width: =742
+                        X: =30
+                        Y: =43
+                        ZIndex: =1
+
+                        imgAnexos As image:
+                            Height: =230
+                            Image: =ThisItem.Value
+                            ImagePosition: =ImagePosition.Fill
+                            OnSelect: |-
+                                =Select(Parent);
+                                
+                                UpdateContext({locImagem: true})
+                            Width: =232
+                            X: =15
+                            Y: =6
+                            ZIndex: =1
+
+                    DataCardKey46 As label:
+                        AutoHeight: =true
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Size: =12
+                        Text: ="Fotografias"
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        ZIndex: =2
+
+            lblDfCaracteristicasCliente As label:
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Bold
+                Height: =36
+                Size: =15
+                Text: ="Características do Cliente"
+                Width: =802
+                X: =498
+                ZIndex: =6
+
+    ctnDetailsFormHeader As groupContainer.manualLayoutContainer:
+        Height: =83
+        Width: =1366
+        ZIndex: =2
+
+        rectDfHeader As rectangle:
+            Fill: =RGBA(24, 56, 132, 1)
+            Height: =2
+            Width: =1232
+            X: =108
+            Y: =72
+            ZIndex: =1
+
+        lblDfDetalhesVisita As label:
+            Color: =RGBA(24, 56, 132, 1)
+            Fill: =RGBA(24, 56, 132, 0)
+            Font: =Font.'Lato Black'
+            FontWeight: =FontWeight.Semibold
+            Height: =52
+            PaddingLeft: =0
+            Size: =25
+            Text: ="DETALHES DA VISITA"
+            Width: =1232
+            X: =108
+            Y: =20
+            ZIndex: =2
+
+        icoDfVoltar As icon.ArrowLeft:
+            Color: =RGBA(24, 56, 132, 1)
+            Icon: =Icon.ArrowLeft
+            OnSelect: =Back()
+            X: =20
+            Y: =19
+            ZIndex: =3
+

@@ -1,0 +1,155 @@
+"'Screen View Clients' As screen":
+    LoadingSpinner: =LoadingSpinner.Data
+
+    DataTable1 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =0
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.Verdana
+        HeadingFill: =RGBA(24, 56, 132, 1)
+        HeadingFont: =Font.Verdana
+        HeadingFontWeight: =FontWeight.Bold
+        HeadingSize: =8
+        Height: =669
+        Items: =Filter('Tb - Clientes','Nome Rota' = glrDrRoteiros.Selected.'Nome Rota')
+        Size: =11
+        Width: =1238
+        X: =102
+        Y: =99
+        ZIndex: =2
+
+        "'Codigo Empresa_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Codigo Empresa"
+            FieldName: ="CodigoEmpresa"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =16
+            Text: =ThisItem.'Codigo Empresa'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+        "'Razao Social_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Razao Social"
+            FieldName: ="RazaoSocial"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =17
+            Text: =ThisItem.'Razao Social'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+        "'Nome Rota_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Nome Rota"
+            FieldName: ="NomeRota"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.'Nome Rota'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+        "'Responsavel Visita_Column1' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Responsavel Visita"
+            FieldName: ="ResponsavelVisita"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =5
+            Text: =ThisItem.'Responsavel Visita'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =7
+
+        Endereco_Column1 As dataTableColumn.textualColumn:
+            AutoWidth: =true
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Endereco"
+            FieldName: ="Endereco"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.Endereco
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =19
+
+        Telefone_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Telefone"
+            FieldName: ="Telefone"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =19
+            Text: =ThisItem.Telefone
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =20
+
+        "'Distância Estimada_Column1' As dataTableColumn.numberColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Distância"
+            FieldName: ="Dist_x00e2_nciaEstimada"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.Dist_x00e2_nciaEstimada
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =22
+
+    ctnViewClientsHeader As groupContainer.manualLayoutContainer:
+        Height: =83
+        Width: =1366
+        ZIndex: =3
+
+        rectVcHeader As rectangle:
+            Fill: =RGBA(24, 56, 132, 1)
+            Height: =2
+            Width: =1232
+            X: =108
+            Y: =72
+            ZIndex: =1
+
+        lblVcClientes As label:
+            Color: =RGBA(24, 56, 132, 1)
+            Fill: =RGBA(24, 56, 132, 0)
+            Font: =Font.Verdana
+            FontWeight: =FontWeight.Semibold
+            Height: =52
+            PaddingLeft: =0
+            Size: =25
+            Text: ="CLIENTES"
+            Width: =1232
+            X: =108
+            Y: =20
+            ZIndex: =2
+
+        icoVcVoltar As icon.ArrowLeft:
+            Color: =RGBA(24, 56, 132, 1)
+            Icon: =Icon.ArrowLeft
+            OnSelect: =Back()
+            X: =20
+            Y: =19
+            ZIndex: =3
+

@@ -1,0 +1,10 @@
+App As appinfo:
+    BackEnabled: =false
+    ConfirmExit: =true
+    OnError: |
+        =
+    OnStart: |+
+        =Set(UserEmail, User().Email);
+        
+        
+

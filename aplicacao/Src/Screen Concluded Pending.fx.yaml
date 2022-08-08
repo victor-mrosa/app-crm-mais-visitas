@@ -1,0 +1,161 @@
+"'Screen Concluded Pending' As screen":
+    BackgroundImage: ='fundo-branco-_1'
+    ImagePosition: =ImagePosition.Fill
+
+    "Gallery2 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        Height: =555
+        Items: =Filter('Tb - Clientes','Nome Rota'=glrDrRoteiros.Selected.'Nome Rota',Status.Value=Dropdown2.Selected.Value)
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =Min(168, Self.Height - 60)
+        Width: =622
+        X: =18
+        Y: =172
+        ZIndex: =1
+
+        Title5 As label:
+            Color: =RGBA(9, 33, 98, 1)
+            Font: =Font.'Open Sans Condensed'
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =27
+            Text: =ThisItem.'Codigo Empresa'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =39
+            Y: =49
+            ZIndex: =1
+
+        Subtitle4 As label:
+            Color: =RGBA(50, 86, 160, 1)
+            Font: =Font.'Open Sans Condensed'
+            FontWeight: =FontWeight.Semibold
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =16
+            Text: =ThisItem.'Nome Rota'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =39
+            Y: =93
+            ZIndex: =2
+
+        Separator6 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    Label5 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 16, 96, 1)
+        Font: =Font.'Open Sans Condensed'
+        FontWeight: =FontWeight.Bold
+        Height: =98
+        Size: =39
+        Text: ="Clientes Atendidos"
+        Width: =495
+        X: =782
+        Y: =206
+        ZIndex: =2
+
+    Label5_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 16, 96, 1)
+        Font: =Font.'Open Sans Condensed'
+        FontWeight: =FontWeight.Bold
+        Height: =98
+        Size: =70
+        Text: =CountA(Filter('Tb - Informacoes Visita','Nome Rota'= glrDrRoteiros.Selected.'Nome Rota').ID)
+        Width: =377
+        X: =841
+        Y: =309
+        ZIndex: =3
+
+    Label5_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 16, 96, 1)
+        Font: =Font.'Open Sans Condensed'
+        FontWeight: =FontWeight.Bold
+        Height: =98
+        Size: =39
+        Text: ="Clientes Pendentes"
+        Width: =456
+        X: =801
+        Y: =465
+        ZIndex: =5
+
+    Label5_4 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 16, 96, 1)
+        Font: =Font.'Open Sans Condensed'
+        FontWeight: =FontWeight.Bold
+        Height: =98
+        OnSelect: =
+        Size: =70
+        Text: =CountA(Filter('Tb - Clientes','Nome Rota' =  glrDrRoteiros.Selected.'Nome Rota',Status.Value = "Pendente").ID)
+        Width: =376
+        X: =841
+        Y: =563
+        ZIndex: =6
+
+    Icon2 As icon.Reload:
+        Height: =47
+        Icon: =Icon.Reload
+        OnSelect: =Refresh('Tb - Clientes')
+        Width: =50
+        X: =1252
+        Y: =29
+        ZIndex: =9
+
+    Dropdown2 As dropdown:
+        Items: =["Pendente","Concluído"]
+        Width: =519
+        X: =121
+        Y: =110
+        ZIndex: =10
+
+    lblDfDetalhesVisita_1 As label:
+        Color: =RGBA(24, 56, 132, 1)
+        Fill: =RGBA(24, 56, 132, 0)
+        Font: =Font.Verdana
+        FontWeight: =FontWeight.Semibold
+        Height: =56
+        PaddingLeft: =0
+        Size: =25
+        Text: ="CONCLUÍDOS/PENDENTES"
+        Width: =1109
+        X: =108
+        Y: =20
+        ZIndex: =11
+
+    icoDfVoltar_1 As icon.ArrowLeft:
+        Color: =RGBA(24, 56, 132, 1)
+        Icon: =Icon.ArrowLeft
+        OnSelect: |
+            =Navigate('Screen Details Routes')
+        X: =20
+        Y: =19
+        ZIndex: =12
+
+    Label3_2 As label:
+        Color: =RGBA(9, 33, 98, 1)
+        Font: =Font.'Open Sans Condensed'
+        FontWeight: =FontWeight.Bold
+        Height: =39
+        Size: =24
+        Text: ="Filtro"
+        Width: =82
+        X: =39
+        Y: =110
+        ZIndex: =13
+

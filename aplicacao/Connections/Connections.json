@@ -1,0 +1,125 @@
+{
+  "642b1287-b2c7-4e70-b8b9-5a5271ccc991": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Usuários do Office 365",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1563/1.0.1563.2732/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "tb-usuarios"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "642b1287-b2c7-4e70-b8b9-5a5271ccc991"
+  },
+  "957915b8-1b9b-4a8e-8300-87de9e856c25": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1563/1.0.1563.2732/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://autoglass365.sharepoint.com/sites/CRMMaisVisitas": {
+        "dataSources": {
+          "Tb - Acessos": {
+            "tableName": "b62ed043-7f91-4a77-b269-e342106f653f"
+          },
+          "Tb - Log CRM Mais Visitas": {
+            "tableName": "98223507-d5be-4058-98d0-54bacaf2dcdd"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Tb - Log CRM Mais Visitas",
+      "Tb - Acessos"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "957915b8-1b9b-4a8e-8300-87de9e856c25"
+  },
+  "fb993c3e-b1d8-47cb-8906-7a21cadd7481": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1563/1.0.1563.2732/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://autoglass365.sharepoint.com/sites/CRMMaisVisitas": {
+        "dataSources": {
+          "Tb - Clientes": {
+            "tableName": "48960915-e0e6-4558-8d72-13dabda5844e"
+          },
+          "Tb - Informacoes Visita": {
+            "tableName": "a6b6a093-d54b-4139-9d76-132050d64f12"
+          },
+          "Tb - Roteiros": {
+            "tableName": "bdfa80ee-2907-4f53-9b34-318e91c603d1"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Tb - Informacoes Visita",
+      "Tb - Clientes",
+      "Tb - Roteiros",
+      "Tb - Log CRM Mais Visitas",
+      "Tb - Acessos",
+      "Tb - Detalhes Roteiros"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "fb993c3e-b1d8-47cb-8906-7a21cadd7481"
+  },
+  "ff3be14e-c360-409b-b2bd-11e8fed22bc5": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1563/1.0.1563.2732/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://autoglass365.sharepoint.com/sites/CRMMaisVisitas": {
+        "dataSources": {
+          "PENDENTES": {
+            "tableName": "d4bfff95-351f-4d8a-879f-80e93f5b632b"
+          },
+          "Tb - Detalhes Roteiros": {
+            "tableName": "122bf9e8-70e8-456f-a9fe-c07abf276a15"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Tb - Detalhes Roteiros",
+      "PENDENTES"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "ff3be14e-c360-409b-b2bd-11e8fed22bc5"
+  }
+}

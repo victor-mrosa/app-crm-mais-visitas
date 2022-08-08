@@ -1,0 +1,583 @@
+"'Screen Manage Access' As screen":
+    LoadingSpinner: =LoadingSpinner.Data
+
+    ctnViewMaCreate As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(241, 244, 249, 1)
+        BorderThickness: =1
+        Height: =668
+        Width: =659
+        X: =683
+        Y: =83
+        ZIndex: =1
+
+        lblMaInformacao As label:
+            Color: =RGBA(255, 0, 0, 1)
+            Font: =Font.Verdana
+            Height: =55
+            Size: =11
+            Text: ="* Solicitar que o colaborador aguarde o sincronismo do servidor por 10 minutos, e depois tentar acessar a aplicação."
+            Width: =589
+            X: =36
+            Y: =608
+            ZIndex: =1
+
+        btnMaSalvar As button:
+            BorderThickness: =0
+            Fill: =RGBA(14, 98, 81, 1)
+            Font: =Font.'Open Sans Condensed'
+            Height: =42
+            HoverFill: =ColorFade(Self.BorderColor, 20%)
+            OnSelect: =SubmitForm(formMaUsuarios)
+            RadiusBottomLeft: =2
+            RadiusBottomRight: =2
+            RadiusTopLeft: =2
+            RadiusTopRight: =2
+            Size: =18
+            Text: ="Salvar"
+            Width: =193
+            X: =432
+            Y: =544
+            ZIndex: =2
+
+        formMaUsuarios As form:
+            AcceptsFocus: =false
+            DataSource: ='Tb - Acessos'
+            Height: =524
+            Item: =glrMaListUsuarios.Selected
+            NumberOfColumns: =1
+            OnSuccess: |-
+                =ResetForm(formMaUsuarios);
+                
+                Navigate('Screen Loading',ScreenTransition.CoverRight)
+            Width: =659
+            Y: =1
+            ZIndex: =3
+
+            Perfil_DataCard1 As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Perfil"
+                Default: =ThisItem.Perfil
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: ="Perfil"
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =true
+                Update: =DataCardValue6.Selected
+                Width: =659
+                X: =0
+                Y: =2
+                ZIndex: =1
+
+                DataCardKey6 As label:
+                    AutoHeight: =true
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Size: =15
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue6 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =1
+                    DefaultSelectedItems: =Parent.Default
+                    DisplayFields: =["Value"]
+                    Font: =Font.'Segoe UI'
+                    Items: =Choices([@'Tb - Acessos'].Perfil)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =Choices('Tb - Acessos'.Perfil,DataCardValue6.SearchText)
+                    SelectMultiple: =false
+                    Size: =15
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey6.Y + DataCardKey6.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage6 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue6.Y + DataCardValue6.Height
+                    ZIndex: =3
+
+                StarVisible6 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(255, 0, 0, 1)
+                    Height: =DataCardKey6.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey6.Y
+                    ZIndex: =4
+
+            Colaborador_DataCard1 As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Colaborador"
+                Default: =ThisItem.Colaborador
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: ="Colaborador"
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =true
+                Update: =DataCardValue1.Selected
+                Width: =659
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+                DataCardKey1 As label:
+                    AutoHeight: =true
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Size: =15
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue1 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =1
+                    DefaultSelectedItems: =Parent.Default
+                    DisplayFields: =["DisplayName","Email","Picture"]
+                    DisplayMode: =Parent.DisplayMode
+                    Font: =Font.'Segoe UI'
+                    Items: =Choices([@'Tb - Acessos'].Colaborador)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["DisplayName"]
+                    SearchItems: =Choices('Tb - Acessos'.Colaborador,DataCardValue1.SearchText)
+                    SelectMultiple: =false
+                    Size: =15
+                    Template: =ListItemTemplate.Person
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue1.Y + DataCardValue1.Height
+                    ZIndex: =3
+
+                StarVisible1 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(255, 0, 0, 1)
+                    Height: =DataCardKey1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey1.Y
+                    ZIndex: =4
+
+            Status_DataCard1 As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Status"
+                Default: =ThisItem.Status
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: ="Status"
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =true
+                Update: =DataCardValue2.Selected
+                Width: =659
+                X: =0
+                Y: =1
+                ZIndex: =2
+
+                DataCardKey2 As label:
+                    AutoHeight: =true
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Size: =15
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue2 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =1
+                    DefaultSelectedItems: =Parent.Default
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    Font: =Font.'Segoe UI'
+                    Items: =Choices([@'Tb - Acessos'].Status)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =Choices('Tb - Acessos'.Status,DataCardValue2.SearchText)
+                    SelectMultiple: =false
+                    Size: =15
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage2 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue2.Y + DataCardValue2.Height
+                    ZIndex: =3
+
+                StarVisible2 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(255, 0, 0, 1)
+                    Height: =DataCardKey2.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey2.Y
+                    ZIndex: =4
+
+            Departamento_DataCard1 As typedDataCard.textualEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Departamento"
+                Default: =ThisItem.Departamento
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: ="Departamento"
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@'Tb - Acessos'], DataSourceInfo.MaxLength, "Departamento")
+                Required: =false
+                Update: =DataCardValue3.Text
+                Width: =659
+                X: =0
+                Y: =3
+                ZIndex: =2
+
+                DataCardKey3 As label:
+                    AutoHeight: =true
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Size: =15
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue3 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =1
+                    Default: =Coalesce(Upper(DataCardValue1.Selected.Department), ThisItem.Departamento)
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode.Disabled
+                    Font: =Font.'Segoe UI'
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =15
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage3 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue3.Y + DataCardValue3.Height
+                    ZIndex: =3
+
+                StarVisible3 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey3.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey3.Y
+                    ZIndex: =4
+
+            "'E-mail_DataCard1' As typedDataCard.textualEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="E_x002d_mail"
+                Default: =ThisItem.'E-mail'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: ="E-mail"
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@'Tb - Acessos'], DataSourceInfo.MaxLength, "E_x002d_mail")
+                Required: =false
+                Update: =DataCardValue4.Text
+                Width: =659
+                X: =0
+                Y: =4
+                ZIndex: =2
+
+                DataCardKey4 As label:
+                    AutoHeight: =true
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Size: =15
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue4 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =1
+                    Default: =Coalesce(Upper(DataCardValue1.Selected.Email),ThisItem.'E-mail')
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode.Disabled
+                    Font: =Font.'Segoe UI'
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =15
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage4 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue4.Y + DataCardValue4.Height
+                    ZIndex: =3
+
+                StarVisible4 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey4.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey4.Y
+                    ZIndex: =4
+
+    ctnViewMaList As groupContainer.manualLayoutContainer:
+        Height: =685
+        Width: =683
+        Y: =83
+        ZIndex: =2
+
+        "glrMaListUsuarios As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+            Height: =640
+            Items: =SortByColumns('Tb - Acessos',"Created",Descending)
+            Layout: =Layout.Vertical
+            OnSelect: =
+            ShowNavigation: =true
+            ShowScrollbar: =false
+            TemplateFill: =If(ThisItem.IsSelected,RGBA(241, 244, 249, 1),RGBA(0, 0, 0, 0))
+            TemplatePadding: =0
+            TemplateSize: =97
+            Transition: =Transition.Pop
+            Width: =551
+            X: =111
+            Y: =21
+            ZIndex: =1
+
+            Title3 As label:
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Normal
+                Height: =36
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =ThisItem.Colaborador.DisplayName
+                VerticalAlign: =VerticalAlign.Top
+                Width: =420
+                X: =27
+                Y: =39
+                ZIndex: =1
+
+            NextArrow3 As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                Color: =RGBA(24, 56, 132, 1)
+                Height: =60
+                Icon: =Icon.ArrowRight
+                OnSelect: |-
+                    =Select(Parent);
+                    
+                    EditForm(formMaUsuarios)
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                TabIndex: =0
+                Tooltip: ="Exibir detalhes do item"
+                Width: =60
+                X: =467
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =2
+
+            Separator3 As rectangle:
+                Fill: =RGBA(237, 237, 237, 1)
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - 1
+                ZIndex: =3
+
+            Button5 As button:
+                BorderThickness: =0
+                DisplayMode: =DisplayMode.View
+                Fill: =If(ThisItem.Status.Value = "Ativo",RGBA(54, 176, 75, 1),RGBA(231, 76, 60, 1))
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Bold
+                Height: =18
+                OnSelect: =Select(Parent)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =8
+                Text: =ThisItem.Status.Value
+                Width: =87
+                X: =27
+                Y: =18
+                ZIndex: =4
+
+            Button5_1 As button:
+                BorderThickness: =0
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(128, 128, 128, 1)
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Bold
+                Height: =18
+                OnSelect: =Select(Parent)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =8
+                Text: =ThisItem.Perfil.Value
+                Width: =87
+                X: =120
+                Y: =18
+                ZIndex: =5
+
+    ctnViewMaHeader As groupContainer.manualLayoutContainer:
+        Height: =83
+        Width: =1366
+        ZIndex: =3
+
+        rectMaHeader As rectangle:
+            Fill: =RGBA(24, 56, 132, 1)
+            Height: =2
+            Width: =1232
+            X: =108
+            Y: =72
+            ZIndex: =1
+
+        lblMaClientes As label:
+            Color: =RGBA(24, 56, 132, 1)
+            Fill: =RGBA(24, 56, 132, 0)
+            Font: =Font.Verdana
+            FontWeight: =FontWeight.Semibold
+            Height: =52
+            PaddingLeft: =0
+            Size: =25
+            Text: ="GERENCIAMENTO DE ACESSOS"
+            Width: =1232
+            X: =108
+            Y: =20
+            ZIndex: =2
+
+        icoMaVoltar As icon.ArrowLeft:
+            Color: =RGBA(24, 56, 132, 1)
+            Icon: =Icon.ArrowLeft
+            OnSelect: |-
+                =Navigate('Screen Configurations',ScreenTransition.UnCoverRight);
+                
+                ResetForm(formMaUsuarios);
+                Reset(glrMaListUsuarios)
+            X: =20
+            Y: =19
+            ZIndex: =3
+
+        btnMaNovoUsuario As button:
+            BorderThickness: =0
+            Fill: =RGBA(24, 56, 132, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =39
+            OnSelect: =NewForm(formMaUsuarios)
+            RadiusBottomLeft: =1
+            RadiusBottomRight: =1
+            RadiusTopLeft: =1
+            RadiusTopRight: =1
+            Text: ="Liberar Acesso"
+            Width: =190
+            X: =1150
+            Y: =20
+            ZIndex: =4
+

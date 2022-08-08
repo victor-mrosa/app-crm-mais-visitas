@@ -1,0 +1,426 @@
+"'Screen Page Home' As screen":
+    BackgroundImage: =
+    Fill: =RGBA(241, 244, 249, 1)
+    ImagePosition: =ImagePosition.Fill
+    LoadingSpinner: =LoadingSpinner.Data
+
+    ctnPageHomeNav As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(24, 56, 132, 1)
+        BorderThickness: =2
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =717
+        Width: =96
+        Y: =24
+        ZIndex: =1
+
+        grpPhVisitas As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =3
+
+            icoPhVisitas As icon.Airplane:
+                Color: =RGBA(24, 56, 132, 1)
+                Height: =50
+                Icon: =Icon.Airplane
+                OnSelect: =Navigate('Screen Selected Interview',ScreenTransition.CoverRight)
+                Width: =50
+                X: =23
+                Y: =12
+                ZIndex: =3
+
+            lblPhVisitas As label:
+                Align: =Align.Center
+                Color: =RGBA(24, 56, 132, 1)
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                OnSelect: =Navigate('Screen Selected Interview',ScreenTransition.CoverRight)
+                Size: =10
+                Text: ="Visitas"
+                Width: =96
+                Y: =62
+                ZIndex: =6
+
+        grpPhRoteiros As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =5
+
+            icoPhRoteiros As icon.Map:
+                Height: =50
+                Icon: =Icon.Location
+                OnSelect: =Navigate('Screen Details Routes',ScreenTransition.CoverRight)
+                Width: =50
+                X: =23
+                Y: =107
+                ZIndex: =4
+
+            lblPhRoteiros As label:
+                Align: =Align.Center
+                Color: =RGBA(24, 56, 132, 1)
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                OnSelect: =Navigate('Screen Details Routes',ScreenTransition.CoverRight)
+                Size: =10
+                Text: ="Roteiros"
+                Width: =96
+                Y: =157
+                ZIndex: =5
+
+        grpPhConfiguracoes As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =-67
+            ZIndex: =7
+
+            icoPhConfig As icon.Map:
+                Height: =50
+                Icon: =Icon.Settings
+                OnSelect: =Navigate('Screen Configurations',ScreenTransition.CoverRight)
+                Width: =50
+                X: =23
+                Y: =624
+                ZIndex: =1
+
+            lblPhConfig As label:
+                Align: =Align.Center
+                Color: =RGBA(24, 56, 132, 1)
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                OnSelect: =Navigate('Screen Configurations',ScreenTransition.CoverRight)
+                Size: =10
+                Text: ="Config."
+                Width: =96
+                Y: =674
+                ZIndex: =2
+
+    ctnPageHome As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =560
+        Width: =1233
+        X: =108
+        Y: =180
+        ZIndex: =2
+
+        grpPhUltimasVisitas As group:
+            Height: =5
+            Width: =5
+            X: =60
+            Y: =60
+            ZIndex: =12
+
+            "glrPhUltimasVisitas As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+                BorderThickness: =1
+                Height: =343
+                Items: =FirstN(SortByColumns('Tb - Informacoes Visita',"Created",Descending),10)
+                Layout: =Layout.Vertical
+                ShowNavigation: =true
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =34
+                Transition: =Transition.Pop
+                Width: =758
+                X: =40
+                Y: =142
+                ZIndex: =1
+
+                lblPhDataCriacao As label:
+                    Align: =Align.Center
+                    Font: =Font.'Lato Light'
+                    Height: =34
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =ThisItem.Criado
+                    Width: =142
+                    ZIndex: =1
+
+                Separator4 As rectangle:
+                    Fill: =RGBA(219, 219, 219, 1)
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =34
+                    ZIndex: =4
+
+                lblPhResponsavel As label:
+                    Font: =Font.'Lato Light'
+                    Height: =35
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =8
+                    Text: =Upper(ThisItem.'Responsavel Visita')
+                    X: =142
+                    ZIndex: =5
+
+                lblPhCliente As label:
+                    Font: =Font.'Lato Light'
+                    Height: =35
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =8
+                    Text: =LookUp('Tb - Clientes','Codigo Empresa' = Text(ThisItem.'Codigo Empresa')).'Razao Social'
+                    Width: =238
+                    X: =292
+                    ZIndex: =6
+
+                lblPhTipoAtividade As label:
+                    Align: =Align.Center
+                    Font: =Font.'Lato Light'
+                    Height: =34
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10
+                    Text: =Upper(ThisItem.'Tipo de Atividade')
+                    Width: =130
+                    X: =544
+                    ZIndex: =7
+
+                Icon1 As icon.View:
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =24
+                    Icon: =Icon.View
+                    OnSelect: |-
+                        =Navigate('Screen Details Interview',ScreenTransition.CoverRight,({locVisita: glrPhUltimasVisitas.Selected}))
+                    Width: =24
+                    X: =715
+                    Y: =5
+                    ZIndex: =8
+
+            rectPhCampos As rectangle:
+                BorderThickness: =2
+                Fill: =RGBA(24, 56, 132, 1)
+                Height: =48
+                Width: =758
+                X: =40
+                Y: =94
+                ZIndex: =2
+
+            lblDataCriacao_ As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =48
+                PaddingLeft: =10
+                Size: =12
+                Text: ="Data de Criação"
+                X: =40
+                Y: =94
+                ZIndex: =4
+
+            lblPhResponsavel_ As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =48
+                Size: =12
+                Text: ="Responsável"
+                Width: =138
+                X: =178
+                Y: =94
+                ZIndex: =5
+
+            lblPhCliente_ As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =48
+                Size: =12
+                Text: ="Cliente Atendido"
+                Width: =246
+                X: =328
+                Y: =94
+                ZIndex: =6
+
+            lblPhTipoAtividade_ As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =48
+                Size: =12
+                Text: ="Tipo de Atividade"
+                Width: =141
+                X: =593
+                Y: =94
+                ZIndex: =9
+
+        lblPhDadosAplicacao As label:
+            Align: =Align.Center
+            Font: =Font.Verdana
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: ="Dados da Aplicação"
+            Width: =391
+            X: =798
+            Y: =33
+            ZIndex: =13
+
+        grpPhNumeroAcessos As group:
+            Height: =5
+            Width: =5
+            X: =60
+            Y: =60
+            ZIndex: =13
+
+            lblPhNumeroAcessos As label:
+                Align: =Align.Center
+                Font: =Font.'Segoe UI'
+                Height: =24
+                Size: =14
+                Text: ="Quantidade de Acessos"
+                Width: =218
+                X: =885
+                Y: =169
+                ZIndex: =3
+
+            lblPhNumeroAcessos_ As label:
+                Align: =Align.Center
+                Color: =RGBA(24, 56, 132, 1)
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =20
+                Text: =Count('Tb - Log CRM Mais Visitas'.ID)
+                Width: =218
+                X: =886
+                Y: =126
+                ZIndex: =10
+
+        lblPhUltimasVisitas As label:
+            Align: =Align.Center
+            Font: =Font.Verdana
+            FontWeight: =FontWeight.Bold
+            Size: =18
+            Text: ="Ultimas Visitas"
+            Width: =681
+            X: =40
+            Y: =33
+            ZIndex: =14
+
+        icoPhRecarregar As icon.Reload:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =24
+            Icon: =Icon.Reload
+            OnSelect: =Refresh('Tb - Informacoes Visita')
+            Width: =24
+            X: =754
+            Y: =106
+            ZIndex: =15
+
+        grpPhNumeroVisitas As group:
+            Height: =5
+            Width: =5
+            X: =60
+            Y: =60
+            ZIndex: =15
+
+            lblPhNumeroVisitas As label:
+                Align: =Align.Center
+                Font: =Font.'Segoe UI'
+                Height: =36
+                Size: =14
+                Text: ="Quantidade de Visitas"
+                Width: =218
+                X: =886
+                Y: =271
+                ZIndex: =7
+
+            lblPhNumeroVisitas_ As label:
+                Align: =Align.Center
+                Color: =RGBA(24, 56, 132, 1)
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Bold
+                Size: =20
+                Text: =Count('Tb - Informacoes Visita'.ID)
+                Width: =218
+                X: =886
+                Y: =231
+                ZIndex: =11
+
+        grpPhNumeroClientes As group:
+            Height: =5
+            Width: =5
+            X: =60
+            Y: =60
+            ZIndex: =15
+
+            lblPhNumeroClientes As label:
+                Align: =Align.Center
+                Font: =Font.'Segoe UI'
+                Height: =36
+                Size: =14
+                Text: ="Quantidade de Clientes"
+                Width: =218
+                X: =885
+                Y: =384
+                ZIndex: =8
+
+            lblPhNumeroClientes_ As label:
+                Align: =Align.Center
+                Color: =RGBA(24, 56, 132, 1)
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Bold
+                Size: =20
+                Text: =Count('Tb - Clientes'.ID)
+                Width: =218
+                X: =885
+                Y: =344
+                ZIndex: =12
+
+    ctnPageHomeHeader As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =128
+        Width: =1235
+        X: =108
+        Y: =24
+        ZIndex: =3
+
+        lblPhNome As label:
+            Fill: =RGBA(24, 0, 0, 0)
+            Font: =Font.Verdana
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: =User().FullName
+            Width: =941
+            X: =148
+            Y: =24
+            ZIndex: =1
+
+        imgPhUsuario As image:
+            Image: =User().Image
+            RadiusBottomLeft: =300
+            RadiusBottomRight: =300
+            RadiusTopLeft: =300
+            RadiusTopRight: =300
+            X: =24
+            Y: =12
+            ZIndex: =2
+
+        lblPhEmail As label:
+            Font: =Font.Verdana
+            Height: =32
+            Text: =User().Email
+            Width: =941
+            X: =148
+            Y: =64
+            ZIndex: =3
+
